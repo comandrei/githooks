@@ -1,0 +1,7 @@
+#!/bin/bash
+# $1 is the filename that contains the commit message
+BRANCH=$(git rev-parse --abbrev-ref HEAD)
+grep $BRANCH $1
+if [ $? -ne 0  ]; then
+    sed -i "1s/^/$BRANCH /" $1
+fi
