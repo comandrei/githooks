@@ -3,5 +3,5 @@ IGNORE=W601
 FILES=$(git diff --cached --name-only | grep -v "migrations" | grep -E "py$")
 for FILE in $FILES
 do
-    pep8 --ignore $IGNORE $file
+    pep8 --ignore $IGNORE $FILE
 done
