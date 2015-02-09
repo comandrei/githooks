@@ -3,5 +3,5 @@
 BRANCH=$(git rev-parse --abbrev-ref HEAD)
 grep $BRANCH $1
 if [ $? -ne 0  ]; then
-    sed -i "1s/^/$BRANCH /" $1
+    sed -i .bak -e "1s/^/$BRANCH /" $1
 fi
